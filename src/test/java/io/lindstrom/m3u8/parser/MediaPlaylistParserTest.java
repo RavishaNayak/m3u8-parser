@@ -42,6 +42,18 @@ public class MediaPlaylistParserTest {
         parser.readPlaylist(Paths.get("src/test/resources/media/variant.m3u8"));
     }
 
+
+    @Test
+    public void parseSpatialVideo1Variant() throws Exception {
+        parser.readPlaylist(Paths.get("src/test/resources/media/spatial-video-1-variant.m3u8"));
+    }
+
+
+    @Test
+    public void parseSpatialVideo5Variant() throws Exception {
+        parser.readPlaylist(Paths.get("src/test/resources/media/spatial-video-5-variant.m3u8"));
+    }
+
     @Test
     public void extInfDurationFormat() throws Exception {
         String actual = parser.writePlaylistAsString(parser.readPlaylist(Paths.get("src/test/resources/media/issue-17.m3u8")));

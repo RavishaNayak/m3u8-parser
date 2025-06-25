@@ -227,6 +227,7 @@ enum VariantAttribute implements Attribute<Variant, Variant.Builder> {
                 textBuilder.addQuoted(name(), String.join(",", value.codecs()));
             }
         }
+    };
 
     final static Map<String, VariantAttribute> attributeMap = ParserUtils.toMap(values(), Attribute::key);
 
