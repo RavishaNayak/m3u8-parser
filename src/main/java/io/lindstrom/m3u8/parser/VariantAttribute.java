@@ -218,13 +218,15 @@ enum VariantAttribute implements Attribute<Variant, Variant.Builder> {
     REQ_VIDEO_LAYOUT {
         @Override
         public void read(Variant.Builder builder, String value) {
-            builder.reqVideoLayout(value);
+            builder.codecs(ParserUtils.split(value, ","));
         }
 
         @Override
         public void write(Variant value, TextBuilder textBuilder) {
-            value.reqVideoLayout().ifPresent(v -> textBuilder.addQuoted(key(), v));
-        };
+            if (!value.codecs().isEmpty()) {
+                textBuilder.addQuoted(name(), String.join(",", value.codecs()));
+            }
+        }
 
     final static Map<String, VariantAttribute> attributeMap = ParserUtils.toMap(values(), Attribute::key);
 

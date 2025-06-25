@@ -112,7 +112,7 @@ public interface Variant {
     /**
      * @return variant attribute REQ-VIDEO-LAYOUT
      */
-    Optional<String> reqVideoLayout();
+    List<String> reqVideoLayout();
     
     static Builder builder() {
         return new Builder();
