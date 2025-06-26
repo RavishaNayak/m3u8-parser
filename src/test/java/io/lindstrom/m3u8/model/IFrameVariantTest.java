@@ -16,7 +16,7 @@ public class IFrameVariantTest {
     public void allMethodsFromVariantExists() {
         // All attributes defined for the EXT-X-STREAM-INF tag (Section 4.4.6.2)
         // are also defined for the EXT-X-I-FRAME-STREAM-INF tag, except for the
-        // FRAME-RATE, AUDIO, SUBTITLES, and CLOSED-CAPTIONS attributes.
+        // FRAME-RATE, AUDIO, SUBTITLES, CLOSED-CAPTIONS and REQ-VIDEO-LAYOUTattributes.
         List<String> ignoreMethods = new ArrayList<>();
         ignoreMethods.add("frameRate");
         ignoreMethods.add("audio");
@@ -24,6 +24,7 @@ public class IFrameVariantTest {
         ignoreMethods.add("frameRate");
         ignoreMethods.add("closedCaptions");
         ignoreMethods.add("closedCaptionsNone");
+        ignoreMethods.add("reqVideoLayout");
 
         for (Method m : Variant.class.getMethods()) {
             if (ignoreMethods.contains(m.getName())) {

@@ -34,6 +34,8 @@ public class MultivariantPlaylistReadAndWrite {
                 "open-m3u8/multivariantPlaylistWithAlternativeAudio.m3u8",
                 "open-m3u8/multivariantPlaylistWithAlternativeVideo.m3u8",
                 "open-m3u8/multivariantPlaylistWithIFrames.m3u8",
+                "spatial/with-1-variant.m3u8",
+                "spatial/with-5-variant.m3u8",
                 "multivariant/content-steering.m3u8")
                 .map(p -> Paths.get("src/test/resources/", p))
                 .collect(Collectors.toList());

@@ -218,13 +218,13 @@ enum VariantAttribute implements Attribute<Variant, Variant.Builder> {
     REQ_VIDEO_LAYOUT {
         @Override
         public void read(Variant.Builder builder, String value) {
-            builder.codecs(ParserUtils.split(value, ","));
+            builder.reqVideoLayout(ParserUtils.split(value, ","));
         }
 
         @Override
         public void write(Variant value, TextBuilder textBuilder) {
-            if (!value.codecs().isEmpty()) {
-                textBuilder.addQuoted(name(), String.join(",", value.codecs()));
+            if (value.reqVideoLayout().isPresent()) {
+                textBuilder.addQuoted(key(), String.join(",", value.reqVideoLayout().get()));
             }
         }
     };
